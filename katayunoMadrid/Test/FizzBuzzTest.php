@@ -45,10 +45,16 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase {
 
 	// @Al hacer que este test este falle tambien se ven afectados otros metodos.
 	// Error al hacer el test, ¿Deberiamos probar unicamente el metodo isBuzz()?
-	public function testIsBuzz(){
+	public function testIsBuzzTrue(){
 		$fizz = new FizzBuzz();
 		// $this->assertEquals('Buzz',$fizz->isBuzz(5));
 		$this->assertTrue($fizz->isBuzz(5));
 	}
+
+	public function testIsBuzzFalse() {
+		$fizz = new FizzBuzz();
+		$this->assertFalse($fizz->isBuzz(3));
+	}
+
 
 }
