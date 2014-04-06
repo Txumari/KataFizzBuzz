@@ -15,21 +15,24 @@ namespace katayunoMadrid;
  	*   $number, numero entero
  	*	Devuelve String, que toma valor FizzBuzz, Buff, Fizz o el valor del numero
  	*/
-	public function kataFizzBuzz($number){
-		if ($this->isDivisible($number,15)) {
+	public function kataFizzBuzz($number) {
+		if ($this->isDivisible($number,15)){
 			return 'FizzBuzz';
-		} elseif($this->isDivisible($number,5) || $this->haveNumber($number,5)){
+		} elseif($this->isBuzz($number)){
 			return 'Buzz';
-		}elseif($this->isFizz($number)) {
+		}elseif($this->isFizz($number)){
 			return 'Fizz';		
-		} 
-		else{
+		} else{
 			return $number;
 		}
 	}
 
 	public function isFizz($number){
 		return $this->isDivisible($number,3) || $this->haveNumber($number,3);
+	}
+
+	public function isBuzz($number){
+		return false;
 	}
 
 	public function isDivisible($dividendo,$divisor){
