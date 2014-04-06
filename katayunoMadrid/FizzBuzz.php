@@ -18,7 +18,7 @@ namespace katayunoMadrid;
 	public function kataFizzBuzz($number) {
 		if ($this->isDivisible($number,15)){
 			return 'FizzBuzz';
-		} elseif($this->isBuzz($number)){
+		} elseif($this->isDivisible($number,5) || $this->haveNumber($number,5)){
 			return 'Buzz';
 		}elseif($this->isFizz($number)){
 			return 'Fizz';		
@@ -32,7 +32,7 @@ namespace katayunoMadrid;
 	}
 
 	public function isBuzz($number){
-		return false;
+		return true;
 	}
 
 	public function isDivisible($dividendo,$divisor){
