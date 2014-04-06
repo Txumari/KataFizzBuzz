@@ -27,9 +27,10 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals('Buzz',$fizz->kataFizzBuzz(5));
 	}
 
+	// Este caso prueba el orden. Buzz es prioritario vs Fizz
 	public function testHaveFive(){
 		$fizz = new FizzBuzz();
-		$this->assertEquals('Buzz',$fizz->kataFizzBuzz(56));
+		$this->assertEquals('Buzz',$fizz->kataFizzBuzz(53));
 	}
 
 	public function testIsDivisibleThreeFive(){
@@ -37,4 +38,9 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals('FizzBuzz',$fizz->kataFizzBuzz(15));
 	}
 	
+	public function testIsFizz(){
+		$fizz = new FizzBuzz();
+		$this->assertEquals('Fizz',$fizz->kataFizzBuzz(3));
+	}
+
 }
