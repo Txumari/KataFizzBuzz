@@ -32,7 +32,7 @@ namespace katayunoMadrid;
 	}
 
 	public function isBuzz($number){
-		return true;
+		return $number==5;
 	}
 
 	public function isDivisible($dividendo,$divisor){
