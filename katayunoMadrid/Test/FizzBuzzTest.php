@@ -47,14 +47,16 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase {
 	// Error al hacer el test, ¿Deberiamos probar unicamente el metodo isBuzz()?
 	public function testIsBuzzTrue(){
 		$fizz = new FizzBuzz();
-		// $this->assertEquals('Buzz',$fizz->isBuzz(5));
-		$this->assertTrue($fizz->isBuzz(5));
+		$this->assertTrue($fizz->isBuzz(55));
 	}
 
 	public function testIsBuzzFalse() {
 		$fizz = new FizzBuzz();
-		$this->assertFalse($fizz->isBuzz(3));
+		$this->assertEquals(0,$fizz->isBuzz(3));
 	}
+
+	// @Error al testear el metodo usando strpos, ya que no devuel ve true o false
+	// Devuel la posicion que posteriormente en el if se evalua como true o false (0)
 
 
 }

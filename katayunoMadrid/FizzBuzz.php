@@ -32,7 +32,7 @@ namespace katayunoMadrid;
 	}
 
 	public function isBuzz($number){
-		return $number==5;
+		return $this->haveNumber($number,5);
 	}
 
 	public function isDivisible($dividendo,$divisor){
@@ -40,28 +40,10 @@ namespace katayunoMadrid;
 	}
 
 	public function haveNumber($check, $number){
-		return substr_count("$check", "$number");
+		return substr_count("$check", "$number") != false;
 	}
 
 	// @Todo falta tener en cuenta caso dobles
 	// Revisar para recordar los requisitos.
-
-
-	
-
- 	// Before refactorizacion
-
-	// public function divisibleFive($number){
-	// 	return ($number % 5 == 0);
-	// }
-
-	// public function haveFive($number){
-	// 	return strpos($number, '5');
-	// }
-
-	// public function divisibleThreeFive($number){
-	// 	return $this->divisibleFive($number) && $this->divisibleThree($number);
-	// }
-
 }
 
