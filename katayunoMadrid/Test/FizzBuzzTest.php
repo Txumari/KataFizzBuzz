@@ -37,14 +37,19 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase {
 		$fizz = new FizzBuzz();
 		$this->assertEquals('FizzBuzz',$fizz->kataFizzBuzz(15));
 	}
-	
+
 	public function testIsFizz(){
 		$fizz = new FizzBuzz();
 		$this->assertEquals('Fizz',$fizz->kataFizzBuzz(3));
 	}
 
-	// @Al hacer que este test este falle tambien se ven afectados otros metodos.
-	// Error al hacer el test, ¿Deberiamos probar unicamente el metodo isBuzz()?
+	// Al hacer que este test este falle tambien se ven afectados otros metodos.
+	// ¿Deberiamos probar unicamente el metodo isBuzz()?
+
+	// Al probar unicamente el metodo isBuzz() encontramos un Bug
+	// El metodo havaNumber(), usando substr_count no devuelve true o false
+	// Devuelve la posicion que posteriormente en el if se evalua como true o false (0)
+
 	public function testIsBuzzTrue(){
 		$fizz = new FizzBuzz();
 		$this->assertTrue($fizz->isBuzz(55));
@@ -52,11 +57,8 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase {
 
 	public function testIsBuzzFalse() {
 		$fizz = new FizzBuzz();
-		$this->assertEquals(0,$fizz->isBuzz(3));
+		$this->assertFalse($fizz->isBuzz(3));
 	}
-
-	// @Error al testear el metodo usando strpos, ya que no devuel ve true o false
-	// Devuel la posicion que posteriormente en el if se evalua como true o false (0)
 
 
 }
